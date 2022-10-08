@@ -8,8 +8,8 @@ def main():
     matches = re.findall('.exports=({.*)},', data.text)
     if len(matches) > 0:
         match = matches[0]
-        #match = re.sub("([A-Z0-9]*):", r'"\1":', match)
-        #match = re.sub("\.([0-9]*)", r'0.\1', match)
+        match = re.sub("([A-Z0-9]*):", r'"\1":', match)
+        match = re.sub("\.([0-9]*)", r'0.\1', match)
         roles = json.loads(match)
         champs = requests.get("https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json").json()
         all_roles = ["TOP", "JUNGLE", "MIDDLE", "BOTTOM", "UTILITY"]
