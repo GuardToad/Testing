@@ -2,9 +2,7 @@ name: Notification on push
 
 on:
   push:
-    branches:
-    - main
-
+  
 jobs:
   build:
 
